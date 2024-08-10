@@ -1,3 +1,34 @@
+/* Import the custom exwayer_font */
+@font-face {
+    font-family: 'exwayer_font';
+    src: url('/fonts/exwayer.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Import the custom FUTUI font */
+@font-face {
+    font-family: 'FUTUI';
+    src: url('/fonts/FUTUI___.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #FFFFFF; /* Default white color for text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6; /* Purple neon highlights */
+}
+
+/* Apply neon glow to all text elements */
+* {
+    text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6;
+}
+
 /* Background Image Styling */
 .background-image {
     position: fixed;
@@ -10,32 +41,20 @@
     z-index: -1; /* Sends the background behind other elements */
 }
 
-/* General Styles */
-body {
-    font-family: 'Courier New', Courier, monospace;
-    color: #E0E0E0;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    text-shadow: 0 0 5px #00FF9F, 0 0 10px #00FF9F;
-}
-
 /* Header Styles */
 header {
     background-color: rgba(18, 18, 18, 0.8);
     padding: 20px;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid #00FF9F;
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5); /* Purple shadow */
+    border-bottom: 2px solid #9b59b6; /* Purple border */
 }
 
 header h1 {
+    font-family: 'exwayer_font', sans-serif; /* Apply custom exwayer_font */
     margin: 0;
     font-size: 4em;
-    color: #00FF9F;
+    color: #FFD700; /* Gold color for the header title */
     animation: neon-glow 1.5s ease-in-out infinite alternate;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -44,7 +63,7 @@ header h1 {
 header p {
     margin: 5px 0 0;
     font-size: 1.5em;
-    color: #CCCCCC;
+    color: #FFD700; /* Gold color for the subtitle */
     text-transform: uppercase;
 }
 
@@ -52,31 +71,38 @@ header p {
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Enhanced for mobile views */
     background-color: rgba(26, 26, 26, 0.8);
-    border-bottom: 2px solid #00FF9F;
-    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.5);
+    border-bottom: 2px solid #9b59b6; /* Purple border */
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5); /* Purple shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 nav a {
     padding: 15px 25px;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FFFFFF; /* White color for the links */
     font-size: 1.2em;
     transition: color 0.3s, text-shadow 0.3s;
+    font-family: 'Courier New', Courier, monospace; /* Consistent font for links */
     font-weight: bold;
     text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #00FF9F;
-    text-shadow: 0px 0px 10px #00FF9F;
+    color: #9b59b6; /* Purple color on hover */
+    text-shadow: 0px 0px 10px #9b59b6; /* Purple neon highlight on hover */
 }
 
 /* Section Styles */
 section {
-    padding: 60px 20px;
+    padding: 20px;
     max-width: 1000px;
     margin: auto;
+    margin-top: 80px; /* Space for the fixed navbar */
     background-color: rgba(30, 30, 30, 0.85);
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
@@ -84,10 +110,10 @@ section {
 }
 
 h2 {
-    color: #00FF9F;
+    color: #FFD700; /* Gold color for section headers */
     margin-bottom: 20px;
-    font-size: 3em;
-    border-bottom: 2px solid #00FF9F;
+    font-size: 2em;
+    border-bottom: 2px solid #9b59b6; /* Purple border */
     display: inline-block;
     padding-bottom: 10px;
     animation: fadeInLeft 1s ease-in-out;
@@ -96,23 +122,23 @@ h2 {
 
 /* Team Member Styles */
 .team-member {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: rgba(30, 30, 30, 0.85);
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid #00FF9F;
-    box-shadow: 0px 5px 20px rgba(0, 255, 159, 0.5);
+    border: 2px solid #9b59b6; /* Purple border */
+    box-shadow: 0px 5px 20px rgba(155, 89, 182, 0.5); /* Purple shadow */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .team-member:hover {
     transform: translateY(-10px);
-    box-shadow: 0px 10px 30px rgba(0, 255, 159, 0.7);
+    box-shadow: 0px 10px 30px rgba(155, 89, 182, 0.7); /* Purple shadow */
 }
 
 .team-member h3 {
-    color: #00FF9F;
-    font-size: 2em;
+    color: #FFD700; /* Gold color for team member titles */
+    font-size: 1.5em;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
@@ -120,59 +146,76 @@ h2 {
 /* Resource Button Styles */
 .resource-buttons {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
 }
 
 .resource-button {
-    background-color: #00FF9F;
+    background-color: #9b59b6; /* Purple button background */
     color: #0A0A0A;
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
+    font-family: 'FUTUI', sans-serif; /* Apply FUTUI font to buttons */
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.2)
-}/* Add to retro-dark-mode.css */
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3); /* Purple shadow */
+}
 
-/* Media queries for mobile devices */
+/* Fun hover effects for the buttons */
+.resource-button:hover {
+    background-color: #ffd700; /* Gold color on hover */
+    color: #000000; /* Black text on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7); /* Gold glow effect */
+}
+
+/* Login Button Styles */
+input[type="submit"] {
+    background-color: #9b59b6; /* Purple button background */
+    color: #0A0A0A;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'FUTUI', sans-serif; /* Apply FUTUI font to login button */
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3); /* Purple shadow */
+}
+
+/* Fun hover effects for the login button */
+input[type="submit"]:hover {
+    background-color: #ffd700; /* Gold color on hover */
+    color: #000000; /* Black text on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7); /* Gold glow effect */
+}
+
+/* Media Queries for Mobile View */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
     header h1 {
         font-size: 2.5em;
     }
 
-    header p {
-        font-size: 1em;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
     nav a {
-        padding: 10px;
+        padding: 10px 15px;
         font-size: 1em;
     }
 
     section {
-        padding: 30px 10px;
+        padding: 20px 10px;
     }
 
     h2 {
-        font-size: 2em;
-    }
-
-    .team-member {
-        padding: 10px;
+        font-size: 2.5em;
     }
 
     .resource-buttons {
@@ -181,14 +224,68 @@ h2 {
     }
 
     .resource-button {
-        padding: 10px;
-        font-size: 1em;
         width: 100%;
+        font-size: 1em;
+        padding: 10px 20px;
     }
 
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .team-member h3 {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .resource-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .team-member h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6, 0 0 60px #9b59b6;
+    }
+    to {
+        text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6, 0 0 60px #9b59b6, 0 0 70px #9b59b6;
     }
 }
