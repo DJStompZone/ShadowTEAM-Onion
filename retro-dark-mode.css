@@ -136,4 +136,59 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 5px 15px rgba(0, 255, 159
+    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.2)
+}/* Add to retro-dark-mode.css */
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .team-member {
+        padding: 10px;
+    }
+
+    .resource-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resource-button {
+        padding: 10px;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

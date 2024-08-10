@@ -9,7 +9,207 @@
 </head>
 <body>
 
-    <!-- Background Image Section -->
+    <!-- Backgroun/* Background Image Styling */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/ShadowTEAM.png') no-repeat center center;
+    background-size: cover;
+    z-index: -1; /* Sends the background behind other elements */
+}
+
+/* General Styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #00FF9F, 0 0 10px #00FF9F;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(18, 18, 18, 0.8);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #00FF9F;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 4em;
+    color: #00FF9F;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.5em;
+    color: #CCCCCC;
+    text-transform: uppercase;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Enhanced for mobile views */
+    background-color: rgba(26, 26, 26, 0.8);
+    border-bottom: 2px solid #00FF9F;
+    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.5);
+}
+
+nav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    transition: color 0.3s, text-shadow 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #00FF9F;
+    text-shadow: 0px 0px 10px #00FF9F;
+}
+
+/* Section Styles */
+section {
+    padding: 20px; /* Reduced padding for smaller screens */
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgba(30, 30, 30, 0.85);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+h2 {
+    color: #00FF9F;
+    margin-bottom: 20px;
+    font-size: 2em; /* Reduced font size for better readability */
+    border-bottom: 2px solid #00FF9F;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeInLeft 1s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Team Member Styles */
+.team-member {
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
+    background-color: rgba(30, 30, 30, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00FF9F;
+    box-shadow: 0px 5px 20px rgba(0, 255, 159, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(0, 255, 159, 0.7);
+}
+
+.team-member h3 {
+    color: #00FF9F;
+    font-size: 1.5em; /* Reduced font size for better readability */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Resource Button Styles */
+.resource-buttons {
+    display: flex;
+    flex-direction: column; /* Stacked buttons for smaller screens */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.resource-button {
+    background-color: #00FF9F;
+    color: #0A0A0A;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 255, 159, 0.3);
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .resource-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resource-button {
+        width: 100%;
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .team-member h3 {
+        font-size: 1.7em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .resource-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .team-member h3 {
+        font-size: 1.5em;
+    }
+}d Image Section -->
     <div class="background-image"></div>
 
     <header>
