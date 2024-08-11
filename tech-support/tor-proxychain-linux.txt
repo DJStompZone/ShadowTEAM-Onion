@@ -1,0 +1,67 @@
+[using tor as a proxy chain in debian based linux]
+
+[configure tor as proxy chain]
+
+first we need to edit the proxy chain config which in most cases will be found here>
+
+- sudo nano /etc/proxychains4.conf
+
+if it is not here you can use the locate command to find it>
+
+- locate proxychains
+
+once in the proxychains config file first and formost we need to set the proxy chain to dynamic
+by uncommenting the #dynamic_chain > dynamic_chain and commenting the strict_chain > #strict_chain
+
+Please make sure that proxy_dns is uncommented this is important.
+
+Now scroll to the bottom of the config file and add this>
+
+[Proxy List]
+#add proxy here ...
+#meanwhile
+#deafults set to "tor"
+socks4  127.0.0.1 9050
+socks5  127.0.0.1 9050
+
+Please note the double space is correct between socks and the ip
+
+save and exit file.
+
+
+[installing and running tor]
+
+you have to run tor as a service to enable the proxy chain usage
+
+to install tor 
+
+- sudo apt install tor
+
+to start tor
+
+- sudo service tor start
+
+check to make sure it is working
+
+- service tor status
+
+[To use proxy chains]
+
+In this example we will be using nmap, this is helpful to add another layer of security/ anonymity
+to a scan, You can also use the proxy chains for other things, We are usung nmap to simplify use.
+
+how to use
+
+- proxychains nmap <command options>
+
+to use with browser (firefox for example)
+
+- proxychains firefox
+
+[Thank you]
+
+This will conclude the lesson thank you for taking the time to learn.
+
+Shadowdrums
+
+                             

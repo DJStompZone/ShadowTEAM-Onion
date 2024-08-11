@@ -1,0 +1,67 @@
+
+
+
+Mining Monero on Raspberry Pi 4 or Debian Based Linux OS's, This specific use case was ubuntu server os
+
+how to install Linux: 
+
+1. sudo apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
+
+2. git clone https://github.com/xmrig/xmrig.git
+
+3. cd xmrig
+
+4. mkdir build
+
+5. cd build
+
+6. cmake ..
+
+7. make
+
+8. chmod a+x xmrig
+
+9. ./xmrig -o gulf.moneroocean.stream:10128 -u <Monero wallet address> -p <device-name>
+
+10. Now on another device download manero wallet and make a wallet and remember to save your seed phrase. Once wallet is made go to the 'Account' tab and copy your wallet address. if you already have your wallet and wallet address move on to the next step.
+
+11.gulf.moneroocean.stream:10128   this is a mining pool thats open and is fine to use
+   you can change this with other mining pools if you wish
+
+
+To make it a service so it runs anytime the computer starts up youll
+need to make this file.
+
+sudo nano /etc/systemd/system/miner.service
+
+This is what you put in the miner.service
+
+[Unit]
+Description=XMRig Monero Miner
+
+[Service]
+WorkingDirectory=/home/<user>/xmrig/build
+ExecStart=/home/<user>/xmrig/build/xmrig -o gulf.moneroocean.stream:10128 -u <wallet address> -p <device-name>
+
+[Install]
+WantedBy=multi-user.target
+
+
+then 
+
+sudo systemctl daemon-reload
+
+sudo systemctl enable miner.service
+
+sudo systemctl start miner
+
+sudo systemctl status miner
+
+
+to mine in the build folder to test use these commands:
+
+
+to mine max cpu thread
+
+./xmrig -o gulf.moneroocean.stream:10128 -u <Monero wallet address> -p <device-name> --cpu-max-threads-hint 
+

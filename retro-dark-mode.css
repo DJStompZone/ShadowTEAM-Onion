@@ -17,11 +17,17 @@
 /* General Styles */
 body {
     font-family: 'Courier New', Courier, monospace;
-    color: #FFFFFF; /* Default white color for text */
+    color: #FFFFFF;
+    /* Default white color for text */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6; /* Purple neon highlights */
+    text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6;
+    /* Purple neon highlights */
+
+    /* Firefox Scrollbar Styles */
+    scrollbar-width: thin;
+    scrollbar-color: #9b59b6 transparent;
 }
 
 /* Apply neon glow to all text elements */
@@ -38,7 +44,11 @@ body {
     height: 100%;
     background: url('images/ShadowTEAM.png') no-repeat center center;
     background-size: cover;
-    z-index: -1; /* Sends the background behind other elements */
+    z-index: -1;
+    /* Sends the background behind other elements */
+    background-position: bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* Header Styles */
@@ -46,35 +56,44 @@ header {
     background-color: rgba(18, 18, 18, 0.8);
     padding: 20px;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5); /* Purple shadow */
-    border-bottom: 2px solid #9b59b6; /* Purple border */
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5);
+    /* Purple shadow */
+    border-bottom: 2px solid #9b59b6;
+    /* Purple border */
+    margin-top: 20px;
+    /* Move header down */
 }
 
 header h1 {
-    font-family: 'exwayer_font', sans-serif; /* Apply custom exwayer_font */
+    font-family: 'exwayer_font', sans-serif;
+    /* Apply custom exwayer_font */
     margin: 0;
+    padding-top: 1ch;
     font-size: 4em;
-    color: #FFD700; /* Gold color for the header title */
+    color: #FFD700;
+    /* Gold color for the header title */
     animation: neon-glow 1.5s ease-in-out infinite alternate;
     text-transform: uppercase;
     letter-spacing: 5px;
+    transition: filter 0.5s ease-in-out;
 }
 
-header p {
-    margin: 5px 0 0;
-    font-size: 1.5em;
-    color: #FFD700; /* Gold color for the subtitle */
-    text-transform: uppercase;
+header h1:hover {
+    filter: brightness(1.5) contrast(1.5);
+    /* Apply a more sensible filter on hover */
 }
 
 /* Navigation Styles */
 nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Enhanced for mobile views */
+    flex-wrap: wrap;
+    /* Enhanced for mobile views */
     background-color: rgba(26, 26, 26, 0.8);
-    border-bottom: 2px solid #9b59b6; /* Purple border */
-    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5); /* Purple shadow */
+    border-bottom: 2px solid #9b59b6;
+    /* Purple border */
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5);
+    /* Purple shadow */
     position: fixed;
     width: 100%;
     top: 0;
@@ -84,63 +103,171 @@ nav {
 nav a {
     padding: 15px 25px;
     text-decoration: none;
-    color: #FFFFFF; /* White color for the links */
+    color: #FFFFFF;
+    /* White color for the links */
     font-size: 1.2em;
     transition: color 0.3s, text-shadow 0.3s;
-    font-family: 'Courier New', Courier, monospace; /* Consistent font for links */
+    font-family: 'Courier New', Courier, monospace;
+    /* Consistent font for links */
     font-weight: bold;
     text-transform: uppercase;
 }
 
 nav a:hover {
-    color: #9b59b6; /* Purple color on hover */
-    text-shadow: 0px 0px 10px #9b59b6; /* Purple neon highlight on hover */
+    color: #9b59b6;
+    /* Purple color on hover */
+    text-shadow: 0px 0px 10px #9b59b6;
+    /* Purple neon highlight on hover */
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+}
+
+.menu-icon div {
+    background-color: #FFFFFF;
+    /* White color for the lines */
+    height: 4px;
+    margin: 5px 0;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dropdown Content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(26, 26, 26, 0.9);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border: 2px solid #9b59b6;
+    border-radius: 5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #FFFFFF;
+    /* White text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.2em;
+    font-family: 'FUTUI', sans-serif;
+    /* Apply FUTUI font */
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #9b59b6;
+    /* Default background color */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3);
+    /* Purple shadow */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #FFD700;
+    /* Gold background on hover */
+    color: #000000;
+    /* Black text on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge the link */
+    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7);
+    /* More intense shadow on hover */
+}
+
+/* Show the dropdown menu when the user clicks on the button */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Section Styles */
 section {
-    padding: 20px;
+    padding: 1ch 6ch;
     max-width: 1000px;
     margin: auto;
-    margin-top: 80px; /* Space for the fixed navbar */
-    background-color: rgba(30, 30, 30, 0.85);
+    margin-top: 80px;
+    /* Space for the fixed navbar */
+    background-color: rgba(30, 30, 30, 0.65);
+    border: 2px solid #9b59b6;
+    /* Purple border */
     border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
-    animation: fadeInUp 1.5s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.5);
+    /* Purple shadow */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    background-color: rgba(30, 30, 30, 0.9);
+    /* Fills background on hover */
+    box-shadow: 0px 10px 30px rgba(155, 89, 182, 0.7);
+    /* More intense shadow on hover */
 }
 
 h2 {
-    color: #FFD700; /* Gold color for section headers */
+    color: #FFD700;
+    /* Gold color for section headers */
     margin-bottom: 20px;
     font-size: 2em;
-    border-bottom: 2px solid #9b59b6; /* Purple border */
+    border-bottom: 2px solid #9b59b6;
+    /* Purple border */
     display: inline-block;
     padding-bottom: 10px;
     animation: fadeInLeft 1s ease-in-out;
     text-transform: uppercase;
+    transition: filter 0.5s ease-in-out;
+}
+
+h2:hover {
+    filter: brightness(1.5) contrast(1.5);
+    /* Apply a more sensible filter on hover */
 }
 
 /* Team Member Styles */
 .team-member {
-    margin-bottom: 20px;
-    background-color: rgba(30, 30, 30, 0.85);
-    padding: 20px;
+    margin-bottom: 1.5ch;
+    background-color: transparent;
+    /* Transparent background initially */
+    padding: 1ch 6ch;
     border-radius: 10px;
-    border: 2px solid #9b59b6; /* Purple border */
-    box-shadow: 0px 5px 20px rgba(155, 89, 182, 0.5); /* Purple shadow */
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #9b59b6;
+    padding-bottom: 4ch;
+    /* Purple border */
+    box-shadow: 0px 5px 20px rgba(155, 89, 182, 0.5);
+    /* Purple shadow */
+    transition: background-color 0.6s ease-in-out, transform 0.3s, box-shadow 0.3s, color 0.65s ease-in-out;
 }
 
 .team-member:hover {
+    background-color: rgba(235, 235, 0, 0.75);
+    /* Fills background on hover */
+    color: black;
     transform: translateY(-10px);
-    box-shadow: 0px 10px 30px rgba(155, 89, 182, 0.7); /* Purple shadow */
-}
-
-.team-member h3 {
-    color: #FFD700; /* Gold color for team member titles */
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    box-shadow: 0px 10px 30px rgba(155, 89, 182, 0.7);
+    /* More intense shadow on hover */
 }
 
 /* Resource Button Styles */
@@ -153,50 +280,84 @@ h2 {
 }
 
 .resource-button {
-    background-color: #9b59b6; /* Purple button background */
-    color: #0A0A0A;
+    background-color: #9b59b6;
+    /* Solid color button */
+    color: #FFFFFF;
+    /* White text */
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
-    font-family: 'FUTUI', sans-serif; /* Apply FUTUI font to buttons */
+    font-family: 'FUTUI', sans-serif;
+    /* Apply FUTUI font to buttons */
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3); /* Purple shadow */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3);
+    /* Purple shadow */
 }
 
-/* Fun hover effects for the buttons */
 .resource-button:hover {
-    background-color: #ffd700; /* Gold color on hover */
-    color: #000000; /* Black text on hover */
-    transform: scale(1.1); /* Slightly enlarge the button */
-    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7); /* Gold glow effect */
+    background-color: #FFD700;
+    /* Gold background on hover */
+    color: #000000;
+    /* Black text on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge the button */
+    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7);
+    /* More intense shadow on hover */
 }
 
 /* Login Button Styles */
 input[type="submit"] {
-    background-color: #9b59b6; /* Purple button background */
-    color: #0A0A0A;
+    background-color: #9b59b6;
+    /* Solid color button */
+    color: #FFFFFF;
+    /* White text */
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
-    font-family: 'FUTUI', sans-serif; /* Apply FUTUI font to login button */
+    font-family: 'FUTUI', sans-serif;
+    /* Apply FUTUI font to login button */
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3); /* Purple shadow */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+    box-shadow: 0px 5px 15px rgba(155, 89, 182, 0.3);
+    /* Purple shadow */
 }
 
-/* Fun hover effects for the login button */
 input[type="submit"]:hover {
-    background-color: #ffd700; /* Gold color on hover */
-    color: #000000; /* Black text on hover */
-    transform: scale(1.1); /* Slightly enlarge the button */
-    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7); /* Gold glow effect */
+    background-color: #FFD700;
+    /* Gold background on hover */
+    color: #000000;
+    /* Black text on hover */
+    transform: scale(1.1);
+    /* Slightly enlarge the button */
+    box-shadow: 0px 10px 30px rgba(255, 215, 0, 0.7);
+    /* More intense shadow on hover */
+}
+
+/* Scrollbar Styles for WebKit-based Browsers */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* Transparent track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 30, 30, 0.85);
+    /* Match the hover background */
+    border-radius: 10px;
+    border: 2px solid #9b59b6;
+    /* Purple border */
+    box-shadow: 0 0 10px #9b59b6;
+    /* Purple neon outline */
 }
 
 /* Media Queries for Mobile View */
@@ -208,10 +369,6 @@ input[type="submit"]:hover {
     nav a {
         padding: 10px 15px;
         font-size: 1em;
-    }
-
-    section {
-        padding: 20px 10px;
     }
 
     h2 {
@@ -264,6 +421,7 @@ input[type="submit"]:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -275,6 +433,7 @@ input[type="submit"]:hover {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -285,6 +444,7 @@ input[type="submit"]:hover {
     from {
         text-shadow: 0 0 5px #9b59b6, 0 0 10px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6, 0 0 60px #9b59b6;
     }
+
     to {
         text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6, 0 0 40px #9b59b6, 0 0 50px #9b59b6, 0 0 60px #9b59b6, 0 0 70px #9b59b6;
     }

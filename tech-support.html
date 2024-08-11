@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShadowTEAM - Tech Support">
+    <title>ShadowTEAM - Tech Support</title>
+    <link rel="stylesheet" href="retro-dark-mode.css">
+</head>
+
+<body>
+
+    <!-- Background Image Section -->
+    <div class="background-image"></div>
+
+    <header>
+        <h1>Tech Support Resources</h1>
+        <p>Explore our tutorials and guides</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="home-lab.html">Home Lab</a>
+        <a href="register.html">Register</a>
+        <div class="dropdown" style="margin-left: auto;">
+            <button class="dropbtn">
+                <div class="menu-icon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="home-lab.html">Home Lab</a>
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h2>Available Resources</h2>
+
+        <div class="resource-buttons">
+            <button class="resource-button" onclick="toggleFileContent('back-port')">Back-Port</button>
+            <div class="file-content" id="back-port" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/back-port.txt" download class="download-button">Download</a>
+            </div>
+
+            <button class="resource-button" onclick="toggleFileContent('LinuxOnWindows')">Linux on Windows</button>
+            <div class="file-content" id="LinuxOnWindows" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/LinuxOnWindows.txt" download class="download-button">Download</a>
+            </div>
+
+            <button class="resource-button" onclick="toggleFileContent('Monero-Tutorial-CPU-Mining')">Monero Tutorial (CPU Mining)</button>
+            <div class="file-content" id="Monero-Tutorial-CPU-Mining" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/Monero-Tutorial-CPU-Mining.txt" download class="download-button">Download</a>
+            </div>
+
+            <button class="resource-button" onclick="toggleFileContent('NCAT')">NCAT</button>
+            <div class="file-content" id="NCAT" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/NCAT.txt" download class="download-button">Download</a>
+            </div>
+
+            <button class="resource-button" onclick="toggleFileContent('NMAP')">NMAP</button>
+            <div class="file-content" id="NMAP" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/NMAP.txt" download class="download-button">Download</a>
+            </div>
+
+            <button class="resource-button" onclick="toggleFileContent('tor-proxychain-linux')">Tor Proxychain (Linux)</button>
+            <div class="file-content" id="tor-proxychain-linux" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/tor-proxychain-linux.txt" download class="download-button">Download</a>
+            </div>
+
+            <button class="resource-button" onclick="toggleFileContent('Windows-Terminal')">Windows Terminal</button>
+            <div class="file-content" id="Windows-Terminal" style="display: none;">
+                <pre></pre>
+                <a href="tech-support/Windows-Terminal.txt" download class="download-button">Download</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ShadowTEAM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleFileContent(id) {
+            var content = document.getElementById(id);
+            var preElement = content.querySelector('pre');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                fetch(`tech-support/${id}.txt`)
+                    .then(response => response.text())
+                    .then(data => {
+                        preElement.textContent = data;
+                        content.style.display = "block";
+                    })
+                    .catch(error => {
+                        preElement.textContent = "Failed to load content.";
+                        content.style.display = "block";
+                    });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

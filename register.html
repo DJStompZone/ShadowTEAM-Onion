@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowTEAM Registration</title>
+    <link rel="stylesheet" href="retro-dark-mode.css">
+</head>
+
+<body>
+
+    <!-- Background Image Section -->
+    <div class="background-image"></div>
+
+    <header>
+        <h1>ShadowTEAM Registration</h1>
+        <p>Join our elite group of cybersecurity professionals</p>
+    </header>
+
+    <section>
+        <h2>Register to Join ShadowTEAM</h2>
+        <p>ShadowTEAM is a selective group, dedicated to ethical hacking, IT research, and providing support within the cybersecurity community. We do not condone or engage in illegal activities. Membership is by invitation or approval only. By registering, you agree to adhere to our ethical standards. Violations will result in immediate expulsion and the removal of any contributions you have made to our platform.</p>
+
+        <form id="registrationForm" action="/submit_registration" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="reason">Why do you want to join ShadowTEAM?</label><br>
+            <textarea id="reason" name="reason" rows="4" required></textarea><br>
+
+            <input type="submit" value="Submit Registration" class="resource-button">
+        </form>
+
+        <p id="adminMessage" style="display: none;">Your registration has been submitted and is pending review by Shadow Drums. You will be notified via email if your application is approved or declined.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ShadowTEAM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Simulate form submission to admin for review
+            document.getElementById('adminMessage').style.display = 'block';
+
+            // Normally, here you'd send the form data to the server
+            // Example: using fetch() or XMLHttpRequest to submit the form data
+        }
+    </script>
+
+</body>
+
+</html>

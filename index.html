@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ShadowTEAM - Pioneers in Cybersecurity and Innovation">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; media-src 'self' data:; script-src 'self'; style-src 'self';">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; media-src 'self' data:; script-src 'self'; style-src 'self';">
     <title>ShadowTEAM - Login</title>
     <link rel="stylesheet" href="retro-dark-mode.css">
 </head>
@@ -26,6 +27,22 @@
         <a href="#team">Team</a>
         <a href="#resources">Resources</a>
         <a href="#login">Login</a>
+        <!-- Right-aligned Hamburger Menu Icon -->
+        <div class="dropdown" style="margin-left: auto;">
+            <button class="dropbtn">
+                <div class="menu-icon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </button>
+            <div class="dropdown-content">
+                <a href="tech-support.html">Tech-Support</a>
+                <a href="projects.html">Projects</a>
+                <a href="home-lab.html">Home Lab</a>
+                <a href="register.html">Register</a>
+            </div>
+        </div>
     </nav>
 
     <section id="mission">
@@ -59,7 +76,7 @@
     </section>
 
     <section id="team">
-        <h2>Meet the Team</h2>
+        <h2>M337 7H3 734M</h2>
         <div class="team-member">
             <h3>Codename: Shadowdrums</h3>
             <p>Specialization: Pentesting, Networking, Network Security, Ethical Hacking, Software Development</p>
@@ -122,6 +139,18 @@
                 alert("Bitcoin wallet address copied to clipboard!");
             });
         }
+        document.addEventListener('DOMContentLoaded', () => {
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercentage = scrollTop / docHeight;
+
+                document.querySelector('.background-image').style.filter = `hue-rotate(${scrollPercentage * 360}deg)`;
+            });
+        });
+
+
+
     </script>
 </body>
 

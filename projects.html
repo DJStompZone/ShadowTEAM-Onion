@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShadowTEAM - Projects">
+    <title>ShadowTEAM - Projects</title>
+    <link rel="stylesheet" href="retro-dark-mode.css">
+</head>
+<body>
+    <!-- Background Image Section -->
+    <div class="background-image"></div>
+
+    <header>
+        <h1>ShadowTEAM Projects</h1>
+        <p>Browse and download projects contributed by ShadowTEAM members.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tech-support.html">Tech Support</a>
+        <a href="home-lab.html">Home Lab</a>
+        <a href="register.html">Register</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+
+    <section id="upload-section" style="display: none;">
+        <h2>Upload a New Project</h2>
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="project-name">Project Name:</label><br>
+            <input type="text" id="project-name" name="project-name" required><br><br>
+
+            <label for="readme-file">Upload README.md:</label><br>
+            <input type="file" id="readme-file" name="readme-file" accept=".md" required><br><br>
+
+            <label for="zip-file">Upload Project .zip:</label><br>
+            <input type="file" id="zip-file" name="zip-file" accept=".zip" required><br><br>
+
+            <input type="submit" value="Upload Project" class="resource-button">
+        </form>
+    </section>
+
+    <section id="projects-list">
+        <h2>Available Projects</h2>
+        <!-- This section will be dynamically filled with projects from the backend -->
+        <!-- Example of a project entry -->
+        <div class="project-entry">
+            <h3>Project Name: Example Project</h3>
+            <p>Uploaded by: Shadowdrums</p>
+            <pre>README content preview...</pre>
+            <a href="Projects/example_project.zip" download class="resource-button">Download .zip</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ShadowTEAM. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check if user is authenticated
+        const isAuthenticated = true; // Replace with actual authentication check
+        if (isAuthenticated) {
+            document.getElementById('upload-section').style.display = 'block';
+        }
+
+        // Fetch and display projects (this would be done by the backend)
+        // Example fetch function:
+        // fetch('/projects')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         // Populate projects-list with data
+        //     });
+    </script>
+</body>
+</html>

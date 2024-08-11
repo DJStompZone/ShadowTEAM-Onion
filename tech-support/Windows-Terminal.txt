@@ -1,0 +1,15 @@
+[Windows Terminal]
+
+paste into powershell
+
+winget install -e --id Microsoft.WindowsTerminal
+
+when it finishes 
+
+:win_key:+R
+
+(windows key) + r
+
+then type 
+
+wt

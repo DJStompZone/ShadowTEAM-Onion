@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShadowTEAM - Home Lab">
+    <title>ShadowTEAM - Home Lab</title>
+    <link rel="stylesheet" href="retro-dark-mode.css">
+</head>
+
+<body>
+
+    <!-- Background Image Section -->
+    <div class="background-image"></div>
+
+    <header>
+        <h1>ShadowTEAM_LAB</h1>
+        <p>Ultimate Home Lab - A Masterclass in Computing and Networking</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="tech-support.html">Tech Support</a>
+        <a href="register.html">Register</a>
+        <div class="dropdown" style="margin-left: auto;">
+            <button class="dropbtn">
+                <div class="menu-icon">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="tech-support.html">Tech Support</a>
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            Welcome to a guided tour of one of the most comprehensive and advanced home lab setups you'll likely encounter. Designed with meticulous attention to detail and an evident depth of understanding of computing, networking, and cybersecurity, this home lab serves as a practical, educational, and experimental platform for a myriad of I.T. disciplines.
+        </p>
+    </section>
+
+    <section>
+        <h2>Raspberry Pi Cluster: The Backbone</h2>
+        <p>
+            <strong>Trio of Raspberry Pi 4 Model B with 8GB RAM</strong>
+        </p>
+        <p>
+            The cluster includes three Raspberry Pi 4 Model B devices, each boasting 8GB of RAM. One of these serves as the main external SSH connection server running Kali Linux Purple. This primary SSH server acts as a gateway, enabling users to connect to the other Raspberry Pis, including one running Ubuntu that serves as a general-purpose server, and another that is the powerhouse "Super Pi."
+        </p>
+    </section>
+
+    <section>
+        <h2>Advanced SSH Tunneling and Networking</h2>
+        <p>
+            The home lab network now leverages the ASUS RT-AX82U AX5400 Dual-Band WiFi 6 router for enhanced SSH tunneling and networking capabilities. Here's how the updated setup works:
+        </p>
+        <ul>
+            <li><strong>External SSH Connection:</strong> External SSH connections are directed to a high-numbered port on the main household router. The ASUS RT-AX82U, hardwired to the primary router, forwards these connections to the dedicated SSH server (Super Pi) within the home lab.</li>
+            <li><strong>Secure Tunneling:</strong> The ASUS RT-AX82U provides a robust and secure tunnel for SSH traffic. With advanced QoS and AiProtection Pro features, it ensures that SSH connections are prioritized and protected from external threats.</li>
+            <li><strong>Optimized Networking:</strong> All servers within the lab are connected to a 5-port TP-Link unmanaged switch, which is hardwired to the ASUS router. This setup minimizes latency and maximizes throughput, making remote access and server management seamless and efficient.</li>
+        </ul>
+        <p>
+            This updated network configuration offers a significant improvement over the previous Pi Router setup, providing higher speeds, enhanced security, and a more stable connection for all SSH and networking tasks within the lab.
+        </p>
+    </section>
+
+    <section>
+        <h2>Specialized Roles for Each Pi</h2>
+        <p>
+            Each Raspberry Pi in the cluster is purpose-built to perform a specialized function. From SSH tunneling, routing via OpenWRT, to server roles on Ubuntu and Kali Linux, the system's modular approach not only makes management easier but also ensures efficient resource utilization.
+        </p>
+    </section>
+
+    <section>
+        <h2>The "Super Pi"</h2>
+        <p>
+            Among these devices is the standout "Super Pi"—a Raspberry Pi equipped with 8GB of RAM and a 1TB SATA3 M.2 SSD. It's not just a Pi; it's a miniature powerhouse designed to handle data-intensive tasks and computational operations that would traditionally necessitate a full-scale server.
+        </p>
+    </section>
+
+    <section>
+        <h2>Monitoring and Reliability</h2>
+        <p>
+            A Raspberry Pi Pico W is seamlessly integrated into the system to monitor its health. This microcontroller pings the servers every 3 minutes as a "keep-alive," ensuring uninterrupted and efficient operations.
+        </p>
+    </section>
+
+    <section>
+        <h2>Power and Cooling</h2>
+        <p>
+            The individual 20W power supplies and cooling solutions for each Raspberry Pi highlight a meticulous attention to detail, emphasizing longevity and optimal performance.
+        </p>
+    </section>
+
+    <section>
+        <h2>Main Desktop: The Control Center</h2>
+        <ul>
+            <li><strong>Motherboard:</strong> B550M AORUS PRO-P</li>
+            <li><strong>CPU:</strong> AMD Ryzen 7 5700X (8-core, SMT)</li>
+            <li><strong>RAM:</strong> 64GB DDR4 (Trident Z Royal, 4x16GB, 3600MT/s)</li>
+            <li><strong>Storage:</strong> 1TB WD Black SN770 M.2 NVMe SSD, 2x 1TB WD Black HDDs in RAID 1</li>
+            <li><strong>GPU:</strong> Gigabyte Geforce RTX 4060 Ti 16GB Vram</li>
+            <li><strong>Power Supply:</strong> Corsair 850W</li>
+            <li><strong>Cooling:</strong> Be Quiet! Tower cooler, 7 case fans</li>
+        </ul>
+        <p>
+            The AMD Ryzen 7 5700X 8-core CPU with Simultaneous Multi-Threading (SMT) offers impressive processing power, which is further complemented by a substantial 64GB of DDR4 RAM. The desktop's storage configuration includes a 1TB NVMe SSD for rapid access to frequently used data, and two 1TB HDDs in RAID 1 for additional storage with redundancy. 
+        </p>
+        <p>
+            The Gigabyte Geforce RTX 4060 Ti GPU is capable of handling both gaming and GPU-accelerated computing tasks. With seven case fans and a tower cooler, the system maintains optimal temperature ranges, ensuring reliable and sustained performance under heavy workloads.
+        </p>
+    </section>
+
+    <section>
+        <h2>Laptop as Direct-Attached Storage (DAS) and Windows Server</h2>
+        <p>
+            Sporting a 4-core CPU, 16GB of RAM, and 500GB storage, this laptop doubles as a Direct-Attached Storage (DAS) device and a host for a Windows sandbox server, which allows for isolated testing and experimentation.
+        </p>
+    </section>
+
+    <section>
+        <h2>Unique Network Architecture</h2>
+        <p>
+            While the Raspberry Pis connect to their dedicated router, the main desktop links to the primary household router. The laptop, functioning as DAS, is integrated into the Raspberry Pi network. An Ethernet connection between the main desktop and the laptop establishes a direct link, enabling high-speed data transfers and smooth interactions across the two distinct network environments.
+        </p>
+    </section>
+
+    <section>
+        <h2>Operating Systems</h2>
+        <h3>Windows 10 Pro</h3>
+        <p>
+            Windows 10 Pro runs on both the desktop and the laptop, enhancing the home lab's capabilities. Features such as BitLocker, advanced Windows Defender functionalities, and Hyper-V for virtualization transform these Windows machines into powerful extensions of an already advanced home lab setup.
+        </p>
+        <h3>Raspberry Pi Operating Systems</h3>
+        <p>
+            The Raspberry Pis operate on Kali Linux, Ubuntu, and OpenWRT, each tailored to their specific roles, further adding to the system's adaptability and specialized nature.
+        </p>
+    </section>
+
+    <section>
+        <h2>Additional Servers</h2>
+        <h3>Testing Server</h3>
+        <ul>
+            <li>Motherboard: M-ATX Gigabyte GA-B150M-D3H</li>
+            <li>CPU: Intel Core i5-6500 (4 cores) 3.6GHz</li>
+            <li>RAM: 16GB (2x8GB 2400MT/s Corsair)</li>
+            <li>GPU: ZOTAC RTX 3060 OC 12GB</li>
+            <li>Storage: 1 TB WD Blue SA510 2.5" SATA3 SSD</li>
+            <li>Power Supply: EVGA 650W</li>
+            <li>Case: Open Mining Case</li>
+            <li>Cooling: Deepcool Digital-temperature-display Tower Cooler</li>
+            <li>Operating System: Linux Ubuntu 22.02.3-Server-x86x64-amd64</li>
+        </ul>
+        <p>
+            This server functions as a test bench before moving on to the other servers for production and application. It is crucial for testing and validating applications before deployment.
+        </p>
+
+        <h3>GPU-AI-Server</h3>
+        <ul>
+            <li>Motherboard: ATX ASUSTeK PRIME B550-PLUS AC-HES</li>
+            <li>CPU: AMD Ryzen 5 3600 (6 cores) @ 3.600GHz</li>
+            <li>RAM: 64GB (T-Force Vulcan Z DDR4 3600MT/s), 4x16GB RAM Cards</li>
+            <li>Storage: 1 TB WD Black SN770 M.2 NVMe SSD</li>
+            <li>GPU: Gigabyte RTX 4060 OC (overclocked) 8GB Low Profile</li>
+            <li>GPU2: Gigabyte RTX 4060 OC 8GB Low Profile</li>
+            <li>Expansion: dual port ethernet PCI-e expansion card</li>
+            <li>Power Supply: ThermalTake 750W</li>
+            <li>Cooling: BeQuiet! Pure Rock 2 Tower Cooler</li>
+            <li>Case: Open mining case for ease of access</li>
+            <li>Operating System: Ubuntu Server 22.02 OS</li>
+        </ul>
+        <p>
+            This server is dedicated to developing AI and other software that requires GPU acceleration. It significantly accelerates AI model training and other GPU-intensive tasks, contributing to faster development cycles.
+        </p>
+
+        <h3>Super Pi (Main Server)</h3>
+        <ul>
+            <li><strong>CPU:</strong> Broadcom BCM2711, Quad-core Cortex-A72 (ARM v8 64-bit SoC) @ 1.5GHz</li>
+            <li><strong>RAM:</strong> 8GB LPDDR4-3200 SDRAM</li>
+            <li><strong>Boot Device:</strong> 128GB Sandisk Extreme micro SD</li>
+            <li><strong>Storage:</strong> 1TB SATA3 M.2 SSD</li>
+            <li><strong>Case:</strong> Pironman pi tower case with M.2 HAT and system health display</li>
+            <li><strong>Cooling:</strong> Mini tower cooler with Noctua 40x40x10mm case fan</li>
+            <li><strong>Operating System:</strong> Kali Linux Purple (Customized)</li>
+        </ul>
+        <p>
+            The Super Pi serves as the main server and the primary gateway into the home lab network via SSH for all devices. It handles various tasks such as file storage, backup management, and network administration. Its SSH capabilities allow secure access to other servers and devices within the network.
+        </p>
+    </section>
+
+    <section>
+        <h2>Network Configuration and Router Upgrade</h2>
+        <p>
+            The home lab network has been significantly enhanced with the upgrade from the custom Pi Router to the ASUS RT-AX82U AX5400 Dual-Band WiFi 6 router. This change provides a robust foundation for the lab’s advanced computing and networking needs.
+        </p>
+
+        <h3>Why the ASUS RT-AX82U AX5400?</h3>
+        <p>
+            The ASUS RT-AX82U AX5400 was selected for its superior performance and security features, which are essential for a high-demand lab environment:
+        </p>
+        <ul>
+            <li><strong>High Performance:</strong> The ASUS RT-AX82U supports WiFi 6, delivering faster speeds, reduced latency, and better performance, especially in environments with multiple connected devices.</li>
+            <li><strong>Advanced Security:</strong> With built-in AiProtection Pro, the router offers comprehensive protection against external threats, ensuring the security of sensitive operations like SSH tunneling.</li>
+            <li><strong>Optimized Latency and Bandwidth:</strong> The router’s advanced QoS features prioritize critical tasks, ensuring smooth and responsive performance for SSH connections and server operations.</li>
+        </ul>
+
+        <h3>Current Network Architecture</h3>
+        <p>
+            The ASUS RT-AX82U is hardlined behind the primary household router, ensuring a secure and controlled network environment. All servers and devices are connected via a dedicated 5-port TP-Link unmanaged switch, providing stable and high-speed wired connections using CAT8 cables.
+        </p>
+        <p>
+            The ASUS RT-AX82U now manages all internal network traffic, with the switch handling the connections between the servers and the router. This setup minimizes latency and maximizes the efficiency of data transfers.
+        </p>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            The transition to the ASUS RT-AX82U AX5400 has solidified the home lab’s network infrastructure, offering the speed, security, and stability needed for advanced computing tasks. The hardlined configuration ensures reliable connectivity, making the lab a powerful and secure environment for ongoing projects and experiments.
+        </p>
+        <p>
+            To merely label this home lab as a collection of Raspberry Pis and PCs would be a gross simplification. It stands as a cohesive, highly adaptable computing ecosystem crafted with profound insights into hardware, software, networking, and cybersecurity. Whether the need revolves around cybersecurity research, advanced networking, or general-purpose computing, this home lab presents the resources, flexibility, and security to tackle virtually any IT-oriented challenge.
+        </p>
+        <p>
+            What's birthed here transcends the standard home lab setup. It epitomizes engineering and vision, elevating the home lab concept to unprecedented heights. Through deliberate planning, adept implementation, and a focus on forging a system where the entirety is more significant than the sum of its components, this home lab emerges as a testament to the wonders achievable with contemporary technology and a dash of inventiveness.
+        </p>
+    </section>
+
+    <section>
+        <h2>Additional Considerations</h2>
+        <p>
+            All servers in the home lab run off the network managed by the ASUS RT-AX82U router, providing centralized control and security.
+        </p>
+        <p>
+            Keep the system updated with the latest security patches to ensure optimal performance and security. Regularly monitor the Raspberry Pi's temperature and adjust fan settings if necessary to prevent overheating.
+        </p>
+        <p>
+            Both the testing-server and GPU-AI-server have Wake-On-LAN enabled in BIOS that users from the main server can use to turn on the servers as they need them to extend server life and reduce energy costs.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ShadowTEAM. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
