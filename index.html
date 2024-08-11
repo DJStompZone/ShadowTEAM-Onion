@@ -26,6 +26,7 @@
         <a href="#whatwedo">What We Do</a>
         <a href="#team">Team</a>
         <a href="#resources">Resources</a>
+        <a href="#goals">Goals</a>
         <a href="#login">Login</a>
         <!-- Right-aligned Hamburger Menu Icon -->
         <div class="dropdown" style="margin-left: auto;">
@@ -98,7 +99,31 @@
             <a href="https://github.com/Shadowdrums" target="_blank">
                 <button class="resource-button">Shadowdrums' GitHub</button>
             </a>
+            <a href="tech-support.html">
+                <button class="resource-button">Tech Support Page</button>
+            </a>
         </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals">
+        <h2>Our Goals</h2>
+        <p>ShadowTEAM is committed to advancing the frontiers of digital security and innovation. Our goals are centered around providing free and accessible tools, environments, and resources to empower users worldwide.</p>
+        <ul>
+            <li>**AI-Powered Platform**: We are developing an AI-driven platform to assist users with complex cybersecurity tasks and learning. Initially, access to this platform will be limited to registered users as we build the necessary infrastructure to support broader use.</li>
+            <li>**Free Virtual Environments**: We aim to offer free, web-based virtual machines to the community. These VMs will be available to everyone, providing a secure and controlled space for learning and experimentation.</li>
+            <li>**Accessible Resources**: All our educational resources, including tools, guides, and tutorials, are freely accessible through our GitHub repositories and tech support page. We believe in keeping information open and readily available to foster continuous learning and innovation.</li>
+        </ul>
+
+        <!-- Onion Site Explanation -->
+        <h3>Why We Chose an Onion Site</h3>
+        <p>In our pursuit of privacy, security, and accessibility, we have chosen to host our site on the Tor network as an onion service rather than a traditional clear net site. This decision reflects our core values:</p>
+        <ul>
+            <li>**Enhanced Privacy**: The Tor network offers stronger privacy protections by anonymizing user traffic and reducing the risk of surveillance or tracking. This aligns with our commitment to protecting the privacy of our users.</li>
+            <li>**Security Focused**: Onion services provide a secure environment by design, making it more difficult for malicious actors to compromise or interfere with our site and services.</li>
+            <li>**Accessibility**: While the clear net is widely accessible, it often comes with trade-offs in privacy and security. Hosting as an onion service allows us to maintain a high standard of security without compromising accessibility for those who value privacy.</li>
+        </ul>
+        <p>By operating as an onion service, ShadowTEAM ensures that our community can access our resources and services in a way that prioritizes their security and privacy.</p>
     </section>
 
     <!-- Donations Section -->
@@ -148,9 +173,6 @@
                 document.querySelector('.background-image').style.filter = `hue-rotate(${scrollPercentage * 360}deg)`;
             });
         });
-
-
-
     </script>
 </body>
 
